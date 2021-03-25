@@ -1,12 +1,16 @@
 name: "site_comcorp"
 title: "ComCorp"
 description: |
-  My Website
+  Material de Aula 
 output_dir: "docs"
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Aulas"
+      href: aulas.html
+    - text: "Referencias"
+      href: material.html
+    - text: "Calendario"
+      href: calendario.html
 output: distill::distill_article
