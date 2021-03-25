@@ -2,7 +2,7 @@ name: "site_comcorp"
 title: "ComCorp"
 description: |
   My Website
-output_dir: "_site"
+output_dir: "docs"
 navbar:
   right:
     - text: "Home"
