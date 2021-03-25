@@ -9,12 +9,12 @@ navbar:
       href: index.html
     - text: "Disciplinas"
       menu: 
-        - text: "Comunicação Corporativa"
+        - text: "Comunicacao Corporativa"
           href: comcorp.html
         - text: "TIC"
           href: tic.html
     - text: "Calendario"
       href: calendario.html
-    - tect: "Sobre"
+    - text: "Sobre"
       href: about.html
 output: distill::distill_article

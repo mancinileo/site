@@ -1,12 +1,36 @@
 {
   "articles": [
     {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\r\n\r\n    \r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Leonardo Mancini\r\n            \r\n            \r\n              \r\n                \r\n                    \r\n                      \r\n                        LinkedIn\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Twitter\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        GitHub\r\n                      \r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      \r\n                        Email\r\n                      \r\n                    \r\n                  \r\n                                  \r\n            \r\n          \r\n        \r\n        \r\n        \r\n          \r\n            \r\n            Bio\r\n            Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ. Áreas de pesquisa: ciência de dados ; jornalismo ; comunicação corporativa ; marcas ; financiamento coletivo.\r\n            \r\n            \r\n            Formação\r\n            Universidade do Estado do Rio de Janeiro | UERJ, RJ\r\n            Doutor em Comunicação | 2016 - 2020\r\n            Universidade do Estado do Rio de Janeiro | UERJ, RJ\r\n            Mestre em Comunicação | 2013 - 2015\r\n            Institut des Sciences Politiques de Paris - Sciences-Po | Paris, França\r\n            Mestre em Inteligência Competitiva | 2004 - 2006\r\n            \r\n            \r\n            Experiência\r\n            Curriculo Lates | Link\r\n            \r\n          \r\n        \r\n      \r\n    \r\n\r\n    \r\n      \r\n        \r\n          \r\n            \r\n              \r\n            \r\n              Leonardo Mancini\r\n            \r\n            \r\n              \r\n                \r\n                                    \r\n                    \r\n                      LinkedIn\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Twitter\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      GitHub\r\n                    \r\n                  \r\n                                    \r\n                    \r\n                      Email\r\n                    \r\n                  \r\n                                  \r\n              \r\n            \r\n            \r\n              \r\n              Bio\r\n              Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ. Áreas de pesquisa: ciência de dados ; jornalismo ; comunicação corporativa ; marcas ; financiamento coletivo.\r\n              \r\n              \r\n              Formação\r\n              Universidade do Estado do Rio de Janeiro | UERJ, RJ\r\n              Doutor em Comunicação | 2016 - 2020\r\n              Universidade do Estado do Rio de Janeiro | UERJ, RJ\r\n              Mestre em Comunicação | 2013 - 2015\r\n              Institut des Sciences Politiques de Paris - Sciences-Po | Paris, França\r\n              Mestre em Inteligência Competitiva | 2004 - 2006\r\n              \r\n              \r\n              Experiência\r\n              Curriculo Lates | Link\r\n              \r\n            \r\n        \r\n      \r\n    \r\n\r\n    \r\n    \r\n    ",
+      "last_modified": "2021-03-25T20:07:21-03:00"
+    },
+    {
+      "path": "comcorp.html",
+      "title": "ComCorp",
+      "description": "Aulas ComCorp\n",
+      "author": [],
+      "contents": "\r\nAulas\r\nAula 1\r\nAula 2\r\nAula 3\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-03-25T20:02:49-03:00"
+    },
+    {
       "path": "index.html",
       "title": "Comunicação Corporativa",
       "description": "Material de aula - turma 2021.1\n",
       "author": [],
-      "contents": "\r\nAulas\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-03-25T16:14:04-03:00"
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-03-25T20:03:28-03:00"
+    },
+    {
+      "path": "tic.html",
+      "title": "TIC",
+      "description": "Aulas TIC\n",
+      "author": [],
+      "contents": "\r\nAulas\r\nAula 1\r\nAula 2\r\nAula 3\r\n\r\n\r\n\r\n",
+      "last_modified": "2021-03-25T20:07:21-03:00"
     }
   ],
   "collections": []
