@@ -1,7 +1,7 @@
 ---
-title: "Comunicação Corporativa"
+title: "Disciplinas ESPM - 2021.1"
 description: |
-  Material de aula - turma 2021.1
+  Material de aula 
 site: distill::distill_website
 ---
 
@@ -14,5 +14,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+Aqui você encontrará as aulas e referências utilizadas nas disciplinas do primeiro semestre de 2021.
 
-
+Este site não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
+entrem em contato por ele ou através do [e-mail do professor](mailto:lmancini@espm.br).
