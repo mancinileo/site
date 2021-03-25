@@ -13,3 +13,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+# Aulas
+
+Um texto descritivo
+
+```{r}
+
+plot(mtcars)
+
+```
+
