@@ -20,16 +20,16 @@ site: distill::distill_website
  
 ## Bio
 
-Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ. 
+Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ. <br>
 Áreas de pesquisa: ciência de dados ; jornalismo ; comunicação corporativa ; marcas ; financiamento coletivo. 
 
 ## Formação
 
-**Universidade do Estado do Rio de Janeiro** | UERJ, RJ
+**Universidade do Estado do Rio de Janeiro - UERJ** | RJ, Brasil
 
 Doutor em Comunicação | 2016 - 2020
 
-**Universidade do Estado do Rio de Janeiro** | UERJ, RJ
+**Universidade do Estado do Rio de Janeiro - UERJ** | RJ, Brasil
 
 Mestre em Comunicação | 2013 - 2015
 
@@ -37,4 +37,7 @@ Mestre em Comunicação | 2013 - 2015
 
 Mestre em Inteligência Competitiva | 2004 - 2006
 
+**Universidade Federal do Rio de Janeiro  - UFRJ** | RJ, Brasil
+
+Bacharel em Comunicação Social - Jornalismo | 2000 - 2004
 
