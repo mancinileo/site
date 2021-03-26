@@ -1,7 +1,7 @@
 ---
-title: "Disciplinas ESPM - 2021.1"
+title: "Material de estudo e pesquisa"
 description: |
-  Material de aula 
+  Página do Prof. Leonardo Mancini
 site: distill::distill_website
 ---
 
@@ -13,8 +13,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
+Bem-Vindo!
 
-Aqui você encontrará as aulas e referências utilizadas nas disciplinas do primeiro semestre de 2021.
+Aqui você encontrará materiais de estudo e referências utilizadas nas disciplinas e projetos dos quais eu participo. 
 
-Este site não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
-entrem em contato por ele ou através do [e-mail do professor](mailto:lmancini@espm.br).
+Para os estuantes da ESPM: este site não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
+entrem em contato por ele ou através do [e-mail](mailto:lmancini@espm.br).

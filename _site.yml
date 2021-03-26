@@ -4,17 +4,16 @@ description: |
   Material das disciplinas ESPM 
 output_dir: "docs"
 navbar:
+  search: true
   right:
-    - text: "Inicio"
-      href: index.html
     - text: "Disciplinas"
       menu: 
         - text: "Comunicacao Corporativa"
           href: comcorp.html
         - text: "TIC"
           href: tic.html
-    - text: "Calendario"
-      href: calendario.html
+    - text: "Projetos"
+      href: projetos.html
     - text: "Sobre"
       href: about.html
 output: distill::distill_article
