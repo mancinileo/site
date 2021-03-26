@@ -5,11 +5,13 @@ links:
   - label: LinkedIn
     url: "https://www.linkedin.com/in/leonardomancini/"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/_lmancini"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/mancinileo/"
+  - label: Lattes
+    url: "http://lattes.cnpq.br/8091160100383675"
   - label: Email
-    url: "mailto:lmancini@gmail.com"
+    url: "mailto:lmancini@gmail.com"    
 output:
   postcards::trestles
 site: distill::distill_website
@@ -36,6 +38,3 @@ Mestre em Comunicação | 2013 - 2015
 Mestre em Inteligência Competitiva | 2004 - 2006
 
 
-## Experiência
-
-**Curriculo Lates** | [Link](http://lattes.cnpq.br/8091160100383675)
