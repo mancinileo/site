@@ -1,5 +1,6 @@
 name: "site_comcorp"
 title: "Leonardo Mancini"
+theme: tema.css
 description: |
   Material das disciplinas ESPM 
 output_dir: "docs"
