@@ -14,13 +14,13 @@ links:
     url: "mailto:lmancini@gmail.com"    
 output:
   postcards::trestles
-site: distill::distill_website
 
 ---
  
 ## Bio
 
-Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ. <br>
+Doutor em Comunicação (PPGCom - UERJ), Mestre em Gestão da Informação pela Sciences Po Paris (revalidado como Mestrado em Administração pela Coppead - UFRJ) e em Comunicação (PPGCom UERJ), graduado em Jornalismo pela UFRJ.
+
 Áreas de pesquisa: ciência de dados ; jornalismo ; comunicação corporativa ; marcas ; financiamento coletivo. 
 
 ## Formação
