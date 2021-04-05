@@ -13,8 +13,8 @@
     "categories": [],
     "contents": "\r\nEsse site está sendo inteiramento construido usando R e, em especial, um pacote chamado Distill, que compila o R Markdown em um site estátíco.\r\nAo longo da elaboração, vou descrever os passos para a sua contrução.\r\nPrimeiro, instalei os pacotes Distill e Postcards\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-04-05T15:42:42-03:00",
-    "input_file": {}
+    "last_modified": "2021-04-05T16:31:40-03:00",
+    "input_file": "teste.utf8.md"
   },
   {
     "path": "posts/2021-04-05-bem-vindo/",
@@ -31,6 +31,6 @@
     "contents": "\r\nBem-Vindo!\r\nAqui você encontrará materiais de estudo e referências utilizadas nas disciplinas e projetos dos quais eu participo.\r\nPara os estudantes da ESPM: este site não substitui o Canvas. Qualquer dúvida, entrem em contato por ele ou através do e-mail.\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2021-04-05T16:25:39-03:00",
-    "input_file": "bem-vindo.utf8.md"
+    "input_file": {}
   }
 ]
