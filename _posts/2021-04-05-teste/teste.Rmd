@@ -1,0 +1,23 @@
+---
+title: "Usando o Distill"
+description: |
+  Relato rápido sobre o pacote de publicação Distill.
+author:
+  - name: Leo Mancini
+date: 04-05-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Esse site está sendo inteiramento construido usando R e, em especial, um pacote chamado [Distill](https://rstudio.github.io/distill/), que compila o R Markdown em um site estátíco. 
+
+Ao longo da elaboração, vou descrever os passos para a sua contrução. 
+
+Primeiro, instalei os pacotes Distill e Postcards
+
