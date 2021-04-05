@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Rascunhos e estudos"
 description: |
   Página do Prof. Leonardo Mancini
 listing: posts
