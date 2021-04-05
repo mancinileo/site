@@ -10,10 +10,13 @@
       }
     ],
     "date": "2021-04-05",
-    "categories": [],
+    "categories": [
+      "R Markdown",
+      "Distill"
+    ],
     "contents": "\r\nEsse site está sendo inteiramento construido usando R e, em especial, um pacote chamado Distill, que compila o R Markdown em um site estátíco.\r\nAo longo da elaboração, vou descrever os passos para a sua contrução.\r\nPrimeiro, instalei os pacotes Distill e Postcards\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-04-05T16:31:40-03:00",
+    "last_modified": "2021-04-05T20:25:12-03:00",
     "input_file": "teste.utf8.md"
   },
   {

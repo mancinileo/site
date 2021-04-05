@@ -5,6 +5,9 @@ description: |
 author:
   - name: Leo Mancini
 date: 04-05-2021
+categories:
+  - R Markdown
+  - Distill
 output:
   distill::distill_article:
     self_contained: false
