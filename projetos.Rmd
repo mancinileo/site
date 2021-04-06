@@ -3,4 +3,6 @@ title: "Projetos"
 site: distill::distill_website
 ---
 
-Em desenvolvimento
+Ainda em desenvolvimento...
+
+Em breve, o conteúdo do Grupo R, o grupo de estudos em R dos alunos de jornalismo da ESPM Rio, estará aqui!

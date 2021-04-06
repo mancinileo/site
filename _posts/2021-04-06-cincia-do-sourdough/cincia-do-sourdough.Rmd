@@ -1,0 +1,147 @@
+---
+title: "Ciência do Sourdough"
+description: |
+  _Data nerd_ usando regressão para fazer pão.
+author:
+  - name: Leo Mancini
+    url: {}
+date: 04-05-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(lubridate)
+
+options(scipen = 999)
+
+googlesheets4::gs4_deauth()
+
+sourdough <- googlesheets4::read_sheet("1Lp3dTsKiGpawuf1VzcpRiKqu8u9Cy8MAnt5IbjZZfJ8")
+
+
+sour_plot <- sourdough %>% 
+  ggplot(aes(temp, t_ferm, colour=result, group=result, label=data))+
+  geom_point(size = 2)+
+  geom_smooth(method = "lm")+
+  labs(x="temperatura", 
+       y="tempo de fermentação (horas)", 
+       caption = "Relação entre a temperatura e o tempo de fermentação, considerado 22% de levain",
+       colour = "Resultado")+ 
+  # geom_label()+
+  hrbrthemes::theme_ft_rc()
+
+
+sour_bom <- sourdough %>% 
+  filter(result == "bom")
+
+sour_reg <- lm(t_ferm ~ temp, data = sour_bom)
+
+
+
+## Fun??o para adicionar equa??o
+lm_eqn = function(m) {
+  
+  l <- list(a = format(coef(m)[1], digits = 2),
+            b = format(abs(coef(m)[2]), digits = 2),
+            r2 = format(summary(m)$r.squared, digits = 3));
+  
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
+  
+  as.character(as.expression(eq));                 
+}
+
+
+## Fun??o com p-valor
+
+lm_eqn_p <- function(df, y, x){
+  formula = as.formula(sprintf('%s ~ %s', y, x))
+  m <- lm(formula, data=df);
+  # formating the values into a summary string to print out
+  # ~ give some space, but equal size and comma need to be quoted
+  eq <- substitute(italic(target) == a + b %.% italic(input)*","~~italic(r)^2~"="~r2*","~~p~"="~italic(pvalue), 
+                   list(target = y,
+                        input = x,
+                        a = format(as.vector(coef(m)[1]), digits = 2), 
+                        b = format(as.vector(coef(m)[2]), digits = 2), 
+                        r2 = format(summary(m)$r.squared, digits = 3),
+                        # getting the pvalue is painful
+                        pvalue = format(summary(m)$coefficients[2,'Pr(>|t|)'], digits=1)
+                   )
+  )
+  as.character(as.expression(eq));                 
+}
+
+```
+
+
+Como todos na quarentena, resolvi desenvolver minhas habilidades como padeiro (cuidar da casa, de duas crianças, do cachorro e do matrimônio não era suficiente...). E, como todo mundo que tenta se aventurar no mundo da fermentação natural, tomei uma surra.
+
+No entanto, _data nerd_ que me tornei, resolvi aplicar meus conhecimentos de estatística e de programação para me ajudar na tarefa de dominar a arte da panificação.
+
+Minha maior dificuldade no início era ajustar o tempo de fermentação de acordo com a temperatura do dia. Há outras variáveis que influenciam o processo, mas o que menos eu conseguia controlar era esse. 
+
+O primeiro passo foi criar um _dataset_ com minhas experiências. Fiz no Google Sheets e importei para o R usando um pacote muito bacana chamado _googlesheets4_. 
+O resultado foi esse gráfico aqui:
+
+
+```{r}
+
+
+plotly::ggplotly(sour_plot)
+
+
+
+```
+Com isso, tinha uma ferramenta que ajudava bem na hora de planejar a fermentação, mesmo não sendo infalível. 
+
+Desafiando minhas habilidades no GGplot, fiz ainda mais duas versões, acrescentando a equação da regressão:
+
+
+
+```{r}
+
+
+# Sem o p_valor
+
+sour_plot_eqn = sour_plot + geom_text(aes(x = 23, y = 8.75, 
+                                          label = lm_eqn(lm(t_ferm ~ temp, sour_bom))),
+                                      color = "white",
+                                      size = 3, 
+                                      parse = TRUE)
+
+sour_plot_eqn
+
+
+
+```
+E, para melhorar, acrescentando o p_valor:
+
+```{r}
+
+
+# Com o p_valor
+
+
+sour_plot_eqn2 = sour_plot + geom_text(aes(x = 23.5, y = 8.75, 
+                                          label = lm_eqn_p(sour_bom, "t_ferm", "temp")),
+                                      color = "white",
+                                      size = 3, 
+                                      parse = TRUE)
+
+sour_plot_eqn2
+
+```
+Ainda não estou no nível do pessoal da SlowBakery, mas o pão está ficando bonito! :-)
+
+![](pao.jpg)
+

@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Ciência do Sourdough</title>
+
+  <meta property="description" itemprop="description" content="_Data nerd_ usando regressão para fazer pão."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-04-05"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-04-05"/>
+  <meta name="article:author" content="Leo Mancini"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Ciência do Sourdough"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="_Data nerd_ usando regressão para fazer pão."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Ciência do Sourdough"/>
+  <meta property="twitter:description" content="_Data nerd_ usando regressão para fazer pão."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Ciência do Sourdough"]},{"type":"character","attributes":{},"value":["_Data nerd_ usando regressão para fazer pão.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Leo Mancini"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["04-05-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["cincia-do-sourdough_files/anchor-4.2.2/anchor.min.js","cincia-do-sourdough_files/bowser-1.9.3/bowser.min.js","cincia-do-sourdough_files/crosstalk-1.1.1/css/crosstalk.css","cincia-do-sourdough_files/crosstalk-1.1.1/js/crosstalk.js","cincia-do-sourdough_files/crosstalk-1.1.1/js/crosstalk.js.map","cincia-do-sourdough_files/crosstalk-1.1.1/js/crosstalk.min.js","cincia-do-sourdough_files/crosstalk-1.1.1/js/crosstalk.min.js.map","cincia-do-sourdough_files/distill-2.2.21/template.v2.js","cincia-do-sourdough_files/figure-html5/unnamed-chunk-2-1.png","cincia-do-sourdough_files/figure-html5/unnamed-chunk-3-1.png","cincia-do-sourdough_files/header-attrs-2.7/header-attrs.js","cincia-do-sourdough_files/htmlwidgets-1.5.3/htmlwidgets.js","cincia-do-sourdough_files/jquery-3.5.1/jquery-AUTHORS.txt","cincia-do-sourdough_files/jquery-3.5.1/jquery.js","cincia-do-sourdough_files/jquery-3.5.1/jquery.min.js","cincia-do-sourdough_files/jquery-3.5.1/jquery.min.map","cincia-do-sourdough_files/plotly-binding-4.9.3/plotly.js","cincia-do-sourdough_files/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css","cincia-do-sourdough_files/plotly-main-1.57.1/plotly-latest.min.js","cincia-do-sourdough_files/popper-2.6.0/popper.min.js","cincia-do-sourdough_files/tippy-6.2.7/tippy-bundle.umd.min.js","cincia-do-sourdough_files/tippy-6.2.7/tippy-light-border.css","cincia-do-sourdough_files/tippy-6.2.7/tippy.css","cincia-do-sourdough_files/tippy-6.2.7/tippy.umd.min.js","cincia-do-sourdough_files/typedarray-0.1/typedarray.min.js","cincia-do-sourdough_files/webcomponents-2.0.0/webcomponents.js","pao.jpg"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="cincia-do-sourdough_files/header-attrs-2.7/header-attrs.js"></script>
+  <script src="cincia-do-sourdough_files/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+  <script src="cincia-do-sourdough_files/plotly-binding-4.9.3/plotly.js"></script>
+  <script src="cincia-do-sourdough_files/typedarray-0.1/typedarray.min.js"></script>
+  <script src="cincia-do-sourdough_files/jquery-3.5.1/jquery.min.js"></script>
+  <link href="cincia-do-sourdough_files/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+  <script src="cincia-do-sourdough_files/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+  <link href="cincia-do-sourdough_files/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="cincia-do-sourdough_files/plotly-main-1.57.1/plotly-latest.min.js"></script>
+  <script src="cincia-do-sourdough_files/popper-2.6.0/popper.min.js"></script>
+  <link href="cincia-do-sourdough_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="cincia-do-sourdough_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="cincia-do-sourdough_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="cincia-do-sourdough_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="cincia-do-sourdough_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="cincia-do-sourdough_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="cincia-do-sourdough_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Ciência do Sourdough","description":"_Data nerd_ usando regressão para fazer pão.","authors":[{"author":"Leo Mancini","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-05T00:00:00.000-03:00","citationText":"Mancini, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Ciência do Sourdough</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p><em>Data nerd</em> usando regressão para fazer pão.</p></p>
+</div>
+
+<div class="d-byline">
+  Leo Mancini true 
+  
+<br/>04-05-2021
+</div>
+
+<div class="d-article">
+<p>Como todos na quarentena, resolvi desenvolver minhas habilidades como padeiro (cuidar da casa, de duas crianças, do cachorro e do matrimônio não era suficiente…). E, como todo mundo que tenta se aventurar no mundo da fermentação natural, tomei uma surra.</p>
+<p>No entanto, <em>data nerd</em> que me tornei, resolvi aplicar meus conhecimentos de estatística e de programação para me ajudar na tarefa de dominar a arte da panificação.</p>
+<p>Minha maior dificuldade no início era ajustar o tempo de fermentação de acordo com a temperatura do dia. Há outras variáveis que influenciam o processo, mas o que menos eu conseguia controlar era esse.</p>
+<p>O primeiro passo foi criar um <em>dataset</em> com minhas experiências. Fiz no Google Sheets e importei para o R usando um pacote muito bacana chamado <em>googlesheets4</em>. O resultado foi esse gráfico aqui:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-8b19f41a71c94b55ad95" style="width:624px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b19f41a71c94b55ad95">{"x":{"data":[{"x":[22.5,26,25,21.8,22.4,24.3,27.3],"y":[8.3,5,6.2,8.62,8.16,6.5,5.16],"text":["temp: 22.5<br />t_ferm: 8.30<br />result: bom<br />result: bom<br />data: 2020-08-10","temp: 26.0<br />t_ferm: 5.00<br />result: bom<br />result: bom<br />data: 2020-08-18","temp: 25.0<br />t_ferm: 6.20<br />result: bom<br />result: bom<br />data: 2020-08-21","temp: 21.8<br />t_ferm: 8.62<br />result: bom<br />result: bom<br />data: 2020-08-23","temp: 22.4<br />t_ferm: 8.16<br />result: bom<br />result: bom<br />data: 2020-08-27","temp: 24.3<br />t_ferm: 6.50<br />result: bom<br />result: bom<br />data: 2020-08-28","temp: 27.3<br />t_ferm: 5.16<br />result: bom<br />result: bom<br />data: 2020-09-04"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(248,118,109,1)"}},"hoveron":"points","name":"bom","legendgroup":"bom","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[25.8],"y":[6.5],"text":"temp: 25.8<br />t_ferm: 6.50<br />result: muito<br />result: muito<br />data: 2020-08-14","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,186,56,1)"}},"hoveron":"points","name":"muito","legendgroup":"muito","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[22.5],"y":[6.5],"text":"temp: 22.5<br />t_ferm: 6.50<br />result: pouco<br />result: pouco<br />data: 2020-08-01","type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(97,156,255,1)"}},"hoveron":"points","name":"pouco","legendgroup":"pouco","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[21.8,21.8696202531646,21.9392405063291,22.0088607594937,22.0784810126582,22.1481012658228,22.2177215189873,22.2873417721519,22.3569620253165,22.426582278481,22.4962025316456,22.5658227848101,22.6354430379747,22.7050632911392,22.7746835443038,22.8443037974684,22.9139240506329,22.9835443037975,23.053164556962,23.1227848101266,23.1924050632911,23.2620253164557,23.3316455696203,23.4012658227848,23.4708860759494,23.5405063291139,23.6101265822785,23.679746835443,23.7493670886076,23.8189873417722,23.8886075949367,23.9582278481013,24.0278481012658,24.0974683544304,24.1670886075949,24.2367088607595,24.3063291139241,24.3759493670886,24.4455696202532,24.5151898734177,24.5848101265823,24.6544303797468,24.7240506329114,24.793670886076,24.8632911392405,24.9329113924051,25.0025316455696,25.0721518987342,25.1417721518987,25.2113924050633,25.2810126582278,25.3506329113924,25.420253164557,25.4898734177215,25.5594936708861,25.6291139240506,25.6987341772152,25.7683544303797,25.8379746835443,25.9075949367089,25.9772151898734,26.046835443038,26.1164556962025,26.1860759493671,26.2556962025316,26.3253164556962,26.3949367088608,26.4645569620253,26.5341772151899,26.6037974683544,26.673417721519,26.7430379746835,26.8126582278481,26.8822784810127,26.9518987341772,27.0215189873418,27.0911392405063,27.1607594936709,27.2303797468354,27.3],"y":[8.55833333333333,8.50843881856539,8.45854430379746,8.40864978902953,8.3587552742616,8.30886075949367,8.25896624472573,8.2090717299578,8.15917721518987,8.10928270042194,8.059388185654,8.00949367088607,7.95959915611814,7.90970464135021,7.85981012658227,7.80991561181434,7.76002109704641,7.71012658227848,7.66023206751054,7.61033755274261,7.56044303797468,7.51054852320674,7.46065400843882,7.41075949367088,7.36086497890295,7.31097046413502,7.26107594936708,7.21118143459915,7.16128691983122,7.11139240506328,7.06149789029536,7.01160337552742,6.96170886075949,6.91181434599156,6.86191983122362,6.81202531645569,6.76213080168776,6.71223628691983,6.66234177215189,6.61244725738396,6.56255274261603,6.5126582278481,6.46276371308016,6.41286919831223,6.3629746835443,6.31308016877637,6.26318565400843,6.2132911392405,6.16339662447257,6.11350210970464,6.06360759493671,6.01371308016877,5.96381856540084,5.91392405063291,5.86402953586498,5.81413502109704,5.76424050632911,5.71434599156118,5.66445147679325,5.61455696202531,5.56466244725738,5.51476793248945,5.46487341772152,5.41497890295359,5.36508438818565,5.31518987341772,5.26529535864978,5.21540084388186,5.16550632911392,5.11561181434599,5.06571729957806,5.01582278481012,4.96592827004219,4.91603375527426,4.86613924050632,4.8162447257384,4.76635021097046,4.71645569620253,4.6665611814346,4.61666666666666],"text":["temp: 21.80000<br />t_ferm: 8.558333<br />result: bom<br />result: bom","temp: 21.86962<br />t_ferm: 8.508439<br />result: bom<br />result: bom","temp: 21.93924<br />t_ferm: 8.458544<br />result: bom<br />result: bom","temp: 22.00886<br />t_ferm: 8.408650<br />result: bom<br />result: bom","temp: 22.07848<br />t_ferm: 8.358755<br />result: bom<br />result: bom","temp: 22.14810<br />t_ferm: 8.308861<br />result: bom<br />result: bom","temp: 22.21772<br />t_ferm: 8.258966<br />result: bom<br />result: bom","temp: 22.28734<br />t_ferm: 8.209072<br />result: bom<br />result: bom","temp: 22.35696<br />t_ferm: 8.159177<br />result: bom<br />result: bom","temp: 22.42658<br />t_ferm: 8.109283<br />result: bom<br />result: bom","temp: 22.49620<br />t_ferm: 8.059388<br />result: bom<br />result: bom","temp: 22.56582<br />t_ferm: 8.009494<br />result: bom<br />result: bom","temp: 22.63544<br />t_ferm: 7.959599<br />result: bom<br />result: bom","temp: 22.70506<br />t_ferm: 7.909705<br />result: bom<br />result: bom","temp: 22.77468<br />t_ferm: 7.859810<br />result: bom<br />result: bom","temp: 22.84430<br />t_ferm: 7.809916<br />result: bom<br />result: bom","temp: 22.91392<br />t_ferm: 7.760021<br />result: bom<br />result: bom","temp: 22.98354<br />t_ferm: 7.710127<br />result: bom<br />result: bom","temp: 23.05316<br />t_ferm: 7.660232<br />result: bom<br />result: bom","temp: 23.12278<br />t_ferm: 7.610338<br />result: bom<br />result: bom","temp: 23.19241<br />t_ferm: 7.560443<br />result: bom<br />result: bom","temp: 23.26203<br />t_ferm: 7.510549<br />result: bom<br />result: bom","temp: 23.33165<br />t_ferm: 7.460654<br />result: bom<br />result: bom","temp: 23.40127<br />t_ferm: 7.410759<br />result: bom<br />result: bom","temp: 23.47089<br />t_ferm: 7.360865<br />result: bom<br />result: bom","temp: 23.54051<br />t_ferm: 7.310970<br />result: bom<br />result: bom","temp: 23.61013<br />t_ferm: 7.261076<br />result: bom<br />result: bom","temp: 23.67975<br />t_ferm: 7.211181<br />result: bom<br />result: bom","temp: 23.74937<br />t_ferm: 7.161287<br />result: bom<br />result: bom","temp: 23.81899<br />t_ferm: 7.111392<br />result: bom<br />result: bom","temp: 23.88861<br />t_ferm: 7.061498<br />result: bom<br />result: bom","temp: 23.95823<br />t_ferm: 7.011603<br />result: bom<br />result: bom","temp: 24.02785<br />t_ferm: 6.961709<br />result: bom<br />result: bom","temp: 24.09747<br />t_ferm: 6.911814<br />result: bom<br />result: bom","temp: 24.16709<br />t_ferm: 6.861920<br />result: bom<br />result: bom","temp: 24.23671<br />t_ferm: 6.812025<br />result: bom<br />result: bom","temp: 24.30633<br />t_ferm: 6.762131<br />result: bom<br />result: bom","temp: 24.37595<br />t_ferm: 6.712236<br />result: bom<br />result: bom","temp: 24.44557<br />t_ferm: 6.662342<br />result: bom<br />result: bom","temp: 24.51519<br />t_ferm: 6.612447<br />result: bom<br />result: bom","temp: 24.58481<br />t_ferm: 6.562553<br />result: bom<br />result: bom","temp: 24.65443<br />t_ferm: 6.512658<br />result: bom<br />result: bom","temp: 24.72405<br />t_ferm: 6.462764<br />result: bom<br />result: bom","temp: 24.79367<br />t_ferm: 6.412869<br />result: bom<br />result: bom","temp: 24.86329<br />t_ferm: 6.362975<br />result: bom<br />result: bom","temp: 24.93291<br />t_ferm: 6.313080<br />result: bom<br />result: bom","temp: 25.00253<br />t_ferm: 6.263186<br />result: bom<br />result: bom","temp: 25.07215<br />t_ferm: 6.213291<br />result: bom<br />result: bom","temp: 25.14177<br />t_ferm: 6.163397<br />result: bom<br />result: bom","temp: 25.21139<br />t_ferm: 6.113502<br />result: bom<br />result: bom","temp: 25.28101<br />t_ferm: 6.063608<br />result: bom<br />result: bom","temp: 25.35063<br />t_ferm: 6.013713<br />result: bom<br />result: bom","temp: 25.42025<br />t_ferm: 5.963819<br />result: bom<br />result: bom","temp: 25.48987<br />t_ferm: 5.913924<br />result: bom<br />result: bom","temp: 25.55949<br />t_ferm: 5.864030<br />result: bom<br />result: bom","temp: 25.62911<br />t_ferm: 5.814135<br />result: bom<br />result: bom","temp: 25.69873<br />t_ferm: 5.764241<br />result: bom<br />result: bom","temp: 25.76835<br />t_ferm: 5.714346<br />result: bom<br />result: bom","temp: 25.83797<br />t_ferm: 5.664451<br />result: bom<br />result: bom","temp: 25.90759<br />t_ferm: 5.614557<br />result: bom<br />result: bom","temp: 25.97722<br />t_ferm: 5.564662<br />result: bom<br />result: bom","temp: 26.04684<br />t_ferm: 5.514768<br />result: bom<br />result: bom","temp: 26.11646<br />t_ferm: 5.464873<br />result: bom<br />result: bom","temp: 26.18608<br />t_ferm: 5.414979<br />result: bom<br />result: bom","temp: 26.25570<br />t_ferm: 5.365084<br />result: bom<br />result: bom","temp: 26.32532<br />t_ferm: 5.315190<br />result: bom<br />result: bom","temp: 26.39494<br />t_ferm: 5.265295<br />result: bom<br />result: bom","temp: 26.46456<br />t_ferm: 5.215401<br />result: bom<br />result: bom","temp: 26.53418<br />t_ferm: 5.165506<br />result: bom<br />result: bom","temp: 26.60380<br />t_ferm: 5.115612<br />result: bom<br />result: bom","temp: 26.67342<br />t_ferm: 5.065717<br />result: bom<br />result: bom","temp: 26.74304<br />t_ferm: 5.015823<br />result: bom<br />result: bom","temp: 26.81266<br />t_ferm: 4.965928<br />result: bom<br />result: bom","temp: 26.88228<br />t_ferm: 4.916034<br />result: bom<br />result: bom","temp: 26.95190<br />t_ferm: 4.866139<br />result: bom<br />result: bom","temp: 27.02152<br />t_ferm: 4.816245<br />result: bom<br />result: bom","temp: 27.09114<br />t_ferm: 4.766350<br />result: bom<br />result: bom","temp: 27.16076<br />t_ferm: 4.716456<br />result: bom<br />result: bom","temp: 27.23038<br />t_ferm: 4.666561<br />result: bom<br />result: bom","temp: 27.30000<br />t_ferm: 4.616667<br />result: bom<br />result: bom"],"type":"scatter","mode":"lines","name":"bom","line":{"width":3.77952755905512,"color":"rgba(248,118,109,1)","dash":"solid"},"hoveron":"points","legendgroup":"bom","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[21.8,21.8696202531646,21.9392405063291,22.0088607594937,22.0784810126582,22.1481012658228,22.2177215189873,22.2873417721519,22.3569620253165,22.426582278481,22.4962025316456,22.5658227848101,22.6354430379747,22.7050632911392,22.7746835443038,22.8443037974684,22.9139240506329,22.9835443037975,23.053164556962,23.1227848101266,23.1924050632911,23.2620253164557,23.3316455696203,23.4012658227848,23.4708860759494,23.5405063291139,23.6101265822785,23.679746835443,23.7493670886076,23.8189873417722,23.8886075949367,23.9582278481013,24.0278481012658,24.0974683544304,24.1670886075949,24.2367088607595,24.3063291139241,24.3759493670886,24.4455696202532,24.5151898734177,24.5848101265823,24.6544303797468,24.7240506329114,24.793670886076,24.8632911392405,24.9329113924051,25.0025316455696,25.0721518987342,25.1417721518987,25.2113924050633,25.2810126582278,25.3506329113924,25.420253164557,25.4898734177215,25.5594936708861,25.6291139240506,25.6987341772152,25.7683544303797,25.8379746835443,25.9075949367089,25.9772151898734,26.046835443038,26.1164556962025,26.1860759493671,26.2556962025316,26.3253164556962,26.3949367088608,26.4645569620253,26.5341772151899,26.6037974683544,26.673417721519,26.7430379746835,26.8126582278481,26.8822784810127,26.9518987341772,27.0215189873418,27.0911392405063,27.1607594936709,27.2303797468354,27.3,27.3,27.3,27.2303797468354,27.1607594936709,27.0911392405063,27.0215189873418,26.9518987341772,26.8822784810127,26.8126582278481,26.7430379746835,26.673417721519,26.6037974683544,26.5341772151899,26.4645569620253,26.3949367088608,26.3253164556962,26.2556962025316,26.1860759493671,26.1164556962025,26.046835443038,25.9772151898734,25.9075949367089,25.8379746835443,25.7683544303797,25.6987341772152,25.6291139240506,25.5594936708861,25.4898734177215,25.420253164557,25.3506329113924,25.2810126582278,25.2113924050633,25.1417721518987,25.0721518987342,25.0025316455696,24.9329113924051,24.8632911392405,24.793670886076,24.7240506329114,24.6544303797468,24.5848101265823,24.5151898734177,24.4455696202532,24.3759493670886,24.3063291139241,24.2367088607595,24.1670886075949,24.0974683544304,24.0278481012658,23.9582278481013,23.8886075949367,23.8189873417722,23.7493670886076,23.679746835443,23.6101265822785,23.5405063291139,23.4708860759494,23.4012658227848,23.3316455696203,23.2620253164557,23.1924050632911,23.1227848101266,23.053164556962,22.9835443037975,22.9139240506329,22.8443037974684,22.7746835443038,22.7050632911392,22.6354430379747,22.5658227848101,22.4962025316456,22.426582278481,22.3569620253165,22.2873417721519,22.2177215189873,22.1481012658228,22.0784810126582,22.0088607594937,21.9392405063291,21.8696202531646,21.8,21.8],"y":[7.9611405328183,7.92182882677025,7.88238952424498,7.84281555219971,7.803099406681,7.76323313113797,7.72320829516855,7.68301597412699,7.64264673011461,7.60209059498083,7.56133705607811,7.52037504564039,7.47919293478773,7.43777853329509,7.3961190963957,7.35420134000878,7.31201146587828,7.26953519816857,7.22675783306897,7.18366430289223,7.14023925599336,7.09646715356393,7.05233238395698,7.00781939465609,6.96291284131734,6.91759775249348,6.87185970772265,6.82568502567195,6.77906095803366,6.73197588395658,6.68441949904798,6.63638299249493,6.58785920570985,6.53884276616439,6.48933019076491,6.4393199542245,6.38881251934016,6.33781032778453,6.28631775183649,6.23434100925484,6.1818880451003,6.12896838561148,6.07559297015565,6.02177396776316,5.96752458482123,5.91285887018984,5.85779152338388,5.80233771062877,5.74651289263481,5.69033266693428,5.63381262665705,5.57696823673865,5.51981472779644,5.46236700729019,5.4046395871093,5.34664652639003,5.28840138815003,5.22991720821339,5.17120647486972,5.11228111774291,5.05315250442439,4.99383144353444,4.93432819300181,4.87465247248647,4.81481347900533,4.75481990495109,4.69467995781593,4.63440138104335,4.57399147553134,4.51345712139794,4.45280479969717,4.39204061383898,4.33117031052293,4.27019930004213,4.20913267585323,4.14797523334039,4.08673148772716,4.0254056911116,3.96400184861648,3.90252373365966,3.90252373365966,5.33080959967367,5.36912051425271,5.40750570129346,5.44596893421376,5.4845142181364,5.52314580515942,5.56186821050639,5.60068622956145,5.63960495578127,5.67862979945895,5.71776650729404,5.7570211826965,5.79640030672036,5.83591075948364,5.87555984188434,5.91535529736598,5.9553053334207,5.99541864244122,6.03570442144446,6.07617239009037,6.11683280630772,6.15769647871677,6.19877477490896,6.2400796245082,6.28162351580405,6.32341948462066,6.36548109397563,6.40782240300524,6.4504579235989,6.49340256321637,6.53667155247499,6.58028035631034,6.62424456785223,6.66857978463299,6.7133014673629,6.75842478226737,6.8039644288613,6.84993445600468,6.89634807008472,6.94321744013177,6.99055350551308,7.0383657924673,7.08666224605512,7.13544908403536,7.18473067868689,7.23450947168234,7.28478592581873,7.33555851580913,7.38682375855991,7.43857628154273,7.49080892616999,7.54351288162878,7.59667784352635,7.65029219101152,7.70434317577655,7.75881711648856,7.81369959268567,7.86897563292065,7.92462989284956,7.98064681995599,8.03701080259299,8.09370630195211,8.15071796638838,8.20803072821454,8.2656298836199,8.32350115676885,8.38163074940532,8.44000537744855,8.49861229613174,8.5574393152299,8.61647480586304,8.67570770026512,8.73512748578861,8.79472419428292,8.85448838784936,8.9144111418422,8.97448402585935,9.03469908334995,9.09504881036054,9.15552613384835,7.9611405328183],"text":["temp: 21.80000<br />t_ferm: 8.558333<br />result: bom<br />result: bom","temp: 21.86962<br />t_ferm: 8.508439<br />result: bom<br />result: bom","temp: 21.93924<br />t_ferm: 8.458544<br />result: bom<br />result: bom","temp: 22.00886<br />t_ferm: 8.408650<br />result: bom<br />result: bom","temp: 22.07848<br />t_ferm: 8.358755<br />result: bom<br />result: bom","temp: 22.14810<br />t_ferm: 8.308861<br />result: bom<br />result: bom","temp: 22.21772<br />t_ferm: 8.258966<br />result: bom<br />result: bom","temp: 22.28734<br />t_ferm: 8.209072<br />result: bom<br />result: bom","temp: 22.35696<br />t_ferm: 8.159177<br />result: bom<br />result: bom","temp: 22.42658<br />t_ferm: 8.109283<br />result: bom<br />result: bom","temp: 22.49620<br />t_ferm: 8.059388<br />result: bom<br />result: bom","temp: 22.56582<br />t_ferm: 8.009494<br />result: bom<br />result: bom","temp: 22.63544<br />t_ferm: 7.959599<br />result: bom<br />result: bom","temp: 22.70506<br />t_ferm: 7.909705<br />result: bom<br />result: bom","temp: 22.77468<br />t_ferm: 7.859810<br />result: bom<br />result: bom","temp: 22.84430<br />t_ferm: 7.809916<br />result: bom<br />result: bom","temp: 22.91392<br />t_ferm: 7.760021<br />result: bom<br />result: bom","temp: 22.98354<br />t_ferm: 7.710127<br />result: bom<br />result: bom","temp: 23.05316<br />t_ferm: 7.660232<br />result: bom<br />result: bom","temp: 23.12278<br />t_ferm: 7.610338<br />result: bom<br />result: bom","temp: 23.19241<br />t_ferm: 7.560443<br />result: bom<br />result: bom","temp: 23.26203<br />t_ferm: 7.510549<br />result: bom<br />result: bom","temp: 23.33165<br />t_ferm: 7.460654<br />result: bom<br />result: bom","temp: 23.40127<br />t_ferm: 7.410759<br />result: bom<br />result: bom","temp: 23.47089<br />t_ferm: 7.360865<br />result: bom<br />result: bom","temp: 23.54051<br />t_ferm: 7.310970<br />result: bom<br />result: bom","temp: 23.61013<br />t_ferm: 7.261076<br />result: bom<br />result: bom","temp: 23.67975<br />t_ferm: 7.211181<br />result: bom<br />result: bom","temp: 23.74937<br />t_ferm: 7.161287<br />result: bom<br />result: bom","temp: 23.81899<br />t_ferm: 7.111392<br />result: bom<br />result: bom","temp: 23.88861<br />t_ferm: 7.061498<br />result: bom<br />result: bom","temp: 23.95823<br />t_ferm: 7.011603<br />result: bom<br />result: bom","temp: 24.02785<br />t_ferm: 6.961709<br />result: bom<br />result: bom","temp: 24.09747<br />t_ferm: 6.911814<br />result: bom<br />result: bom","temp: 24.16709<br />t_ferm: 6.861920<br />result: bom<br />result: bom","temp: 24.23671<br />t_ferm: 6.812025<br />result: bom<br />result: bom","temp: 24.30633<br />t_ferm: 6.762131<br />result: bom<br />result: bom","temp: 24.37595<br />t_ferm: 6.712236<br />result: bom<br />result: bom","temp: 24.44557<br />t_ferm: 6.662342<br />result: bom<br />result: bom","temp: 24.51519<br />t_ferm: 6.612447<br />result: bom<br />result: bom","temp: 24.58481<br />t_ferm: 6.562553<br />result: bom<br />result: bom","temp: 24.65443<br />t_ferm: 6.512658<br />result: bom<br />result: bom","temp: 24.72405<br />t_ferm: 6.462764<br />result: bom<br />result: bom","temp: 24.79367<br />t_ferm: 6.412869<br />result: bom<br />result: bom","temp: 24.86329<br />t_ferm: 6.362975<br />result: bom<br />result: bom","temp: 24.93291<br />t_ferm: 6.313080<br />result: bom<br />result: bom","temp: 25.00253<br />t_ferm: 6.263186<br />result: bom<br />result: bom","temp: 25.07215<br />t_ferm: 6.213291<br />result: bom<br />result: bom","temp: 25.14177<br />t_ferm: 6.163397<br />result: bom<br />result: bom","temp: 25.21139<br />t_ferm: 6.113502<br />result: bom<br />result: bom","temp: 25.28101<br />t_ferm: 6.063608<br />result: bom<br />result: bom","temp: 25.35063<br />t_ferm: 6.013713<br />result: bom<br />result: bom","temp: 25.42025<br />t_ferm: 5.963819<br />result: bom<br />result: bom","temp: 25.48987<br />t_ferm: 5.913924<br />result: bom<br />result: bom","temp: 25.55949<br />t_ferm: 5.864030<br />result: bom<br />result: bom","temp: 25.62911<br />t_ferm: 5.814135<br />result: bom<br />result: bom","temp: 25.69873<br />t_ferm: 5.764241<br />result: bom<br />result: bom","temp: 25.76835<br />t_ferm: 5.714346<br />result: bom<br />result: bom","temp: 25.83797<br />t_ferm: 5.664451<br />result: bom<br />result: bom","temp: 25.90759<br />t_ferm: 5.614557<br />result: bom<br />result: bom","temp: 25.97722<br />t_ferm: 5.564662<br />result: bom<br />result: bom","temp: 26.04684<br />t_ferm: 5.514768<br />result: bom<br />result: bom","temp: 26.11646<br />t_ferm: 5.464873<br />result: bom<br />result: bom","temp: 26.18608<br />t_ferm: 5.414979<br />result: bom<br />result: bom","temp: 26.25570<br />t_ferm: 5.365084<br />result: bom<br />result: bom","temp: 26.32532<br />t_ferm: 5.315190<br />result: bom<br />result: bom","temp: 26.39494<br />t_ferm: 5.265295<br />result: bom<br />result: bom","temp: 26.46456<br />t_ferm: 5.215401<br />result: bom<br />result: bom","temp: 26.53418<br />t_ferm: 5.165506<br />result: bom<br />result: bom","temp: 26.60380<br />t_ferm: 5.115612<br />result: bom<br />result: bom","temp: 26.67342<br />t_ferm: 5.065717<br />result: bom<br />result: bom","temp: 26.74304<br />t_ferm: 5.015823<br />result: bom<br />result: bom","temp: 26.81266<br />t_ferm: 4.965928<br />result: bom<br />result: bom","temp: 26.88228<br />t_ferm: 4.916034<br />result: bom<br />result: bom","temp: 26.95190<br />t_ferm: 4.866139<br />result: bom<br />result: bom","temp: 27.02152<br />t_ferm: 4.816245<br />result: bom<br />result: bom","temp: 27.09114<br />t_ferm: 4.766350<br />result: bom<br />result: bom","temp: 27.16076<br />t_ferm: 4.716456<br />result: bom<br />result: bom","temp: 27.23038<br />t_ferm: 4.666561<br />result: bom<br />result: bom","temp: 27.30000<br />t_ferm: 4.616667<br />result: bom<br />result: bom","temp: 27.30000<br />t_ferm: 4.616667<br />result: bom<br />result: bom","temp: 27.30000<br />t_ferm: 4.616667<br />result: bom<br />result: bom","temp: 27.23038<br />t_ferm: 4.666561<br />result: bom<br />result: bom","temp: 27.16076<br />t_ferm: 4.716456<br />result: bom<br />result: bom","temp: 27.09114<br />t_ferm: 4.766350<br />result: bom<br />result: bom","temp: 27.02152<br />t_ferm: 4.816245<br />result: bom<br />result: bom","temp: 26.95190<br />t_ferm: 4.866139<br />result: bom<br />result: bom","temp: 26.88228<br />t_ferm: 4.916034<br />result: bom<br />result: bom","temp: 26.81266<br />t_ferm: 4.965928<br />result: bom<br />result: bom","temp: 26.74304<br />t_ferm: 5.015823<br />result: bom<br />result: bom","temp: 26.67342<br />t_ferm: 5.065717<br />result: bom<br />result: bom","temp: 26.60380<br />t_ferm: 5.115612<br />result: bom<br />result: bom","temp: 26.53418<br />t_ferm: 5.165506<br />result: bom<br />result: bom","temp: 26.46456<br />t_ferm: 5.215401<br />result: bom<br />result: bom","temp: 26.39494<br />t_ferm: 5.265295<br />result: bom<br />result: bom","temp: 26.32532<br />t_ferm: 5.315190<br />result: bom<br />result: bom","temp: 26.25570<br />t_ferm: 5.365084<br />result: bom<br />result: bom","temp: 26.18608<br />t_ferm: 5.414979<br />result: bom<br />result: bom","temp: 26.11646<br />t_ferm: 5.464873<br />result: bom<br />result: bom","temp: 26.04684<br />t_ferm: 5.514768<br />result: bom<br />result: bom","temp: 25.97722<br />t_ferm: 5.564662<br />result: bom<br />result: bom","temp: 25.90759<br />t_ferm: 5.614557<br />result: bom<br />result: bom","temp: 25.83797<br />t_ferm: 5.664451<br />result: bom<br />result: bom","temp: 25.76835<br />t_ferm: 5.714346<br />result: bom<br />result: bom","temp: 25.69873<br />t_ferm: 5.764241<br />result: bom<br />result: bom","temp: 25.62911<br />t_ferm: 5.814135<br />result: bom<br />result: bom","temp: 25.55949<br />t_ferm: 5.864030<br />result: bom<br />result: bom","temp: 25.48987<br />t_ferm: 5.913924<br />result: bom<br />result: bom","temp: 25.42025<br />t_ferm: 5.963819<br />result: bom<br />result: bom","temp: 25.35063<br />t_ferm: 6.013713<br />result: bom<br />result: bom","temp: 25.28101<br />t_ferm: 6.063608<br />result: bom<br />result: bom","temp: 25.21139<br />t_ferm: 6.113502<br />result: bom<br />result: bom","temp: 25.14177<br />t_ferm: 6.163397<br />result: bom<br />result: bom","temp: 25.07215<br />t_ferm: 6.213291<br />result: bom<br />result: bom","temp: 25.00253<br />t_ferm: 6.263186<br />result: bom<br />result: bom","temp: 24.93291<br />t_ferm: 6.313080<br />result: bom<br />result: bom","temp: 24.86329<br />t_ferm: 6.362975<br />result: bom<br />result: bom","temp: 24.79367<br />t_ferm: 6.412869<br />result: bom<br />result: bom","temp: 24.72405<br />t_ferm: 6.462764<br />result: bom<br />result: bom","temp: 24.65443<br />t_ferm: 6.512658<br />result: bom<br />result: bom","temp: 24.58481<br />t_ferm: 6.562553<br />result: bom<br />result: bom","temp: 24.51519<br />t_ferm: 6.612447<br />result: bom<br />result: bom","temp: 24.44557<br />t_ferm: 6.662342<br />result: bom<br />result: bom","temp: 24.37595<br />t_ferm: 6.712236<br />result: bom<br />result: bom","temp: 24.30633<br />t_ferm: 6.762131<br />result: bom<br />result: bom","temp: 24.23671<br />t_ferm: 6.812025<br />result: bom<br />result: bom","temp: 24.16709<br />t_ferm: 6.861920<br />result: bom<br />result: bom","temp: 24.09747<br />t_ferm: 6.911814<br />result: bom<br />result: bom","temp: 24.02785<br />t_ferm: 6.961709<br />result: bom<br />result: bom","temp: 23.95823<br />t_ferm: 7.011603<br />result: bom<br />result: bom","temp: 23.88861<br />t_ferm: 7.061498<br />result: bom<br />result: bom","temp: 23.81899<br />t_ferm: 7.111392<br />result: bom<br />result: bom","temp: 23.74937<br />t_ferm: 7.161287<br />result: bom<br />result: bom","temp: 23.67975<br />t_ferm: 7.211181<br />result: bom<br />result: bom","temp: 23.61013<br />t_ferm: 7.261076<br />result: bom<br />result: bom","temp: 23.54051<br />t_ferm: 7.310970<br />result: bom<br />result: bom","temp: 23.47089<br />t_ferm: 7.360865<br />result: bom<br />result: bom","temp: 23.40127<br />t_ferm: 7.410759<br />result: bom<br />result: bom","temp: 23.33165<br />t_ferm: 7.460654<br />result: bom<br />result: bom","temp: 23.26203<br />t_ferm: 7.510549<br />result: bom<br />result: bom","temp: 23.19241<br />t_ferm: 7.560443<br />result: bom<br />result: bom","temp: 23.12278<br />t_ferm: 7.610338<br />result: bom<br />result: bom","temp: 23.05316<br />t_ferm: 7.660232<br />result: bom<br />result: bom","temp: 22.98354<br />t_ferm: 7.710127<br />result: bom<br />result: bom","temp: 22.91392<br />t_ferm: 7.760021<br />result: bom<br />result: bom","temp: 22.84430<br />t_ferm: 7.809916<br />result: bom<br />result: bom","temp: 22.77468<br />t_ferm: 7.859810<br />result: bom<br />result: bom","temp: 22.70506<br />t_ferm: 7.909705<br />result: bom<br />result: bom","temp: 22.63544<br />t_ferm: 7.959599<br />result: bom<br />result: bom","temp: 22.56582<br />t_ferm: 8.009494<br />result: bom<br />result: bom","temp: 22.49620<br />t_ferm: 8.059388<br />result: bom<br />result: bom","temp: 22.42658<br />t_ferm: 8.109283<br />result: bom<br />result: bom","temp: 22.35696<br />t_ferm: 8.159177<br />result: bom<br />result: bom","temp: 22.28734<br />t_ferm: 8.209072<br />result: bom<br />result: bom","temp: 22.21772<br />t_ferm: 8.258966<br />result: bom<br />result: bom","temp: 22.14810<br />t_ferm: 8.308861<br />result: bom<br />result: bom","temp: 22.07848<br />t_ferm: 8.358755<br />result: bom<br />result: bom","temp: 22.00886<br />t_ferm: 8.408650<br />result: bom<br />result: bom","temp: 21.93924<br />t_ferm: 8.458544<br />result: bom<br />result: bom","temp: 21.86962<br />t_ferm: 8.508439<br />result: bom<br />result: bom","temp: 21.80000<br />t_ferm: 8.558333<br />result: bom<br />result: bom","temp: 21.80000<br />t_ferm: 8.558333<br />result: bom<br />result: bom"],"type":"scatter","mode":"lines","line":{"width":3.77952755905512,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(153,153,153,0.4)","hoveron":"points","hoverinfo":"x+y","name":"bom","legendgroup":"bom","showlegend":false,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":80.7571606475716,"r":39.8505603985056,"b":95.8073889580739,"l":63.2627646326277},"plot_bgcolor":"rgba(37,42,50,1)","paper_bgcolor":"rgba(37,42,50,1)","font":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":15.2760481527605},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[21.525,27.575],"tickmode":"array","ticktext":["22","24","26"],"tickvals":[22,24,26],"categoryorder":"array","categoryarray":["22","24","26"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.81901203819012,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":15.2760481527605},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(70,73,80,1)","gridwidth":0.265670402656704,"zeroline":false,"anchor":"y","title":{"text":"temperatura","font":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":11.9551681195517}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[3.63987361365023,9.41817625385779],"tickmode":"array","ticktext":["4","5","6","7","8","9"],"tickvals":[4,5,6,7,8,9],"categoryorder":"array","categoryarray":["4","5","6","7","8","9"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.81901203819012,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":15.2760481527605},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(70,73,80,1)","gridwidth":0.265670402656704,"zeroline":false,"anchor":"x","title":{"text":"tempo de fermentação (horas)","font":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":11.9551681195517}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":12.2208385222084},"y":0.957554133858268},"annotations":[{"text":"Resultado","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(146,146,153,1)","family":"Roboto Condensed","size":15.2760481527605},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"d7439e92434":{"x":{},"y":{},"colour":{},"label":{},"type":"scatter"},"d7443fc225c":{"x":{},"y":{},"colour":{},"label":{}}},"cur_data":"d7439e92434","visdat":{"d7439e92434":["function (y) ","x"],"d7443fc225c":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Com isso, tinha uma ferramenta que ajudava bem na hora de planejar a fermentação, mesmo não sendo infalível.</p>
+<p>Desafiando minhas habilidades no GGplot, fiz ainda mais duas versões, acrescentando a equação da regressão:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="cincia-do-sourdough_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<p>E, para melhorar, acrescentando o p_valor:</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="cincia-do-sourdough_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<p>Ainda não estou no nível do pessoal da SlowBakery, mas o pão está ficando bonito! :-)</p>
+<p><img src="pao.jpg" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -4,7 +4,7 @@ description: |
   Relato rápido sobre o pacote de publicação Distill.
 author:
   - name: Leo Mancini
-date: 04-05-2021
+date: 04-04-2021
 categories:
   - R Markdown
   - Distill
