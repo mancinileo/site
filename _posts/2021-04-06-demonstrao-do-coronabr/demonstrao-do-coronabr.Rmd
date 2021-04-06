@@ -31,16 +31,16 @@ dados_jhu <- readr::read_csv("~/GitHub/site/_posts/2021-04-06-demonstrao-do-coro
 
 A partir dos dados do Brasil I/O, é possível criar gráficos e mapas para ilustrar um _paper_ ou um artigo jornalístico. Por exemplo:
 
-```{r}
+```{r cache=T}
 plot_uf(dados_br, 
         tipo = "casos",
         prop_pop = TRUE,
         estados = c("AM", "CE", "RS", "SP", "RJ"))
 ```
 
-Da mesma forma, podemos acrescentar mapas interativos, diretamente da IDE para o produto a ser publicado:
+Da mesma forma, podemos acrescentar mapas interativos, diretamente da IDE para a publicação:
 
-```{r}
+```{r cache=T}
 
 # carregando o shapefile do mundo
 data("World") # from tmap
@@ -99,3 +99,6 @@ tm <- tm_shape(covid_lac) +
 tm
 ```
 
+A vantagem é ter todo o fluxo do tratamento dos dados na mesma interface (obtenção, limpeza, transformação, análise e publicação).
+
+Créditos para o código do gráfico e do mapa: [coronabr](https://liibre.github.io/coronabr/index.html)

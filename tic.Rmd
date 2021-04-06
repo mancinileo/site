@@ -20,25 +20,25 @@ entrem em contato por ele ou através do [e-mail do professor](mailto:lmancini@e
 
 #### Aula 1
 
-[Introdução - o que é tecnologia?](\aulas\Aula-1---Tecnologia-e-cotidiano.html)<br>
+[Introdução - o que é tecnologia?](https://tic.mancini.jor.br/aulas/Aula-1---Tecnologia-e-cotidiano.html)<br>
 
 
 #### Aula 2 <br>
-[Programas e Programação.](\aulas\Aula-2---Programas-e-programacao.html)<br>
+[Programas e Programação.](https://tic.mancini.jor.br/aulas/Aula-2---Programas-e-programacao.html)<br>
 
 
 #### Aula 3 <br>
-[Sistemas de Informação e de Comunicação](\aulas\Aula-3---TIC.html)<br>
+[Sistemas de Informação e de Comunicação](https://tic.mancini.jor.br/aulas/Aula-3---Sistemas.html)<br>
 
 #### Aula 4 <br>
-[Analógico e Digital](\aulas\Aula-4---Analogico_Digital.html)<br>
+[Analógico e Digital](https://tic.mancini.jor.br/aulas/Aula-4---Analogico_Digital.html)<br>
 
 
 #### Aula 5 <br>
-[Estrutura Básica de Computadores](\aulas\Aula-5---Redes.html)<br>
+[Estrutura Básica de Computadores](https://tic.mancini.jor.br/aulas/Aula-5---Redes.html)<br>
 
 #### Aula 6 <br>
-[TCP/IP](\aulas\Aula_6_-_servicos.html)<br>
+[TCP/IP](https://tic.mancini.jor.br/aulas/Aula_6_-_servicos.html)<br>
 
 <!-- #### Aula 9 <br> -->
 <!-- [IP e dominios](\aulas\Aula_9_-_servicos.html)<br> -->

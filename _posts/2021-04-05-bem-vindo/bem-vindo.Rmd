@@ -1,11 +1,13 @@
 ---
-title: "Bem-vindo"
+title: "Olá"
 description: |
   Primeiro post do novo site do Prof. Leonardo Mancini.
 author:
   - name: Leo Mancini
     url: {}
 date: 04-04-2021
+categories:
+  - testes
 output:
   distill::distill_article:
     self_contained: false
@@ -16,10 +18,9 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Bem-Vindo!
+Olá!
 
-Aqui você encontrará materiais de estudo e referências utilizadas nas disciplinas e projetos dos quais eu participo.
+Este é um experimento utilizando as ferramentas de publciação do R, integrando RStudio e o Github. Vamos ver no que dá... :-)
 
-Para os estudantes da ESPM: este site não substitui o Canvas. Qualquer dúvida, entrem em contato por ele ou através do e-mail.
 
 
