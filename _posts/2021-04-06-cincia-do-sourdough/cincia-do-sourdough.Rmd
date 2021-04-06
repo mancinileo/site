@@ -6,6 +6,10 @@ author:
   - name: Leo Mancini
     url: {}
 date: 04-05-2021
+categories:
+    - Regressão
+    - Gráficos
+    - Sourdough
 output:
   distill::distill_article:
     self_contained: false
