@@ -2,16 +2,15 @@
 title: "Tecnologias da Informação e da Comunicação"
 description: |
   Turma 2021.1
-site: distill::distill_website
+site: distill::distill_article
 
 ---
-# Sobre 
 
 Este é o site do curso Tecnologias da Informação e da Comunicação, ESPM Rio, turma 2021.1.
 
 Aqui, concentraremos o material de aula e referências para o curso. 
 
-Este site não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
+Este espaço não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
 entrem em contato por ele ou através do [e-mail do professor](mailto:lmancini@espm.br).
 
 ---
