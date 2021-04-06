@@ -1,0 +1,101 @@
+---
+title: "Demonstração do coronabr"
+description: |
+  Mapas e gráficos utilizados no LifeLab de Raciocínio Computacional.
+author:
+  - name: Leo Mancini
+    url: {}
+date: 04-06-2021
+categories:
+  - Mapas
+  - Covid
+  - Gráficos
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+pacman::p_load(tmap, coronabr, sf, brazilmaps)
+
+dados_br <- readr::read_csv("~/GitHub/site/_posts/2021-04-06-demonstrao-do-coronabr/corona_brasil.csv")
+
+dados_jhu <- readr::read_csv("~/GitHub/site/_posts/2021-04-06-demonstrao-do-coronabr/corona_jhu.csv")
+
+
+
+```
+
+A partir dos dados do Brasil I/O, é possível criar gráficos e mapas para ilustrar um _paper_ ou um artigo jornalístico. Por exemplo:
+
+```{r}
+plot_uf(dados_br, 
+        tipo = "casos",
+        prop_pop = TRUE,
+        estados = c("AM", "CE", "RS", "SP", "RJ"))
+```
+
+Da mesma forma, podemos acrescentar mapas interativos, diretamente da IDE para o produto a ser publicado:
+
+```{r}
+
+# carregando o shapefile do mundo
+data("World") # from tmap
+
+# criando vetor com paises fora da latinoamerica e caribe (lac)
+fora <- c("Canada", "United States", "Greenland")
+
+# selecionando apenas paises lac
+lac <- World[World$continent %in% c("South America", "North America")
+             & !World$name %in% fora, ]
+
+
+# vamos alterar os nomes em lac para bater com jhu
+lac$country_region <- as.character(lac$name)
+lac$country_region[lac$country_region == "Dominican Rep."] <- "Dominican Republic"
+
+
+# selecionando apenas países da lac
+dados_lac <- dados_jhu[dados_jhu$country_region %in% lac$country_region, ]
+
+#agregando dados por país
+df_lac <- aggregate(confirmed ~ country_region, data = dados_lac, FUN = sum)
+
+
+
+#### 3. juntar os dados de casos de COVID-19 na América Latina e Caribe com os dados do shapefile para a região.
+
+covid_lac <- merge(lac, df_lac, by = "country_region")
+covid_lac$confirmed_per100k <- (covid_lac$confirmed/covid_lac$pop_est) * 100000
+
+
+
+#### 4. O bter as classes e o texto da legenda:
+
+h <- hist(covid_lac$confirmed_per100k, plot = F)
+
+breaks <- h$breaks
+
+text <- paste(breaks[1:length(breaks)-1], "a", breaks[2:length(breaks)])
+
+text[length(breaks)-1] <- paste(">", breaks[length(breaks)-1])
+
+
+
+### 5. o mapa:
+  
+tmap_mode("view")
+
+tm <- tm_shape(covid_lac) +
+  tm_polygons("confirmed_per100k", 
+              title = "Casos por 100 mil hab.", 
+              breaks = breaks, 
+              labels = text) +
+  tmap_style("col_blind")
+
+tm
+```
+
