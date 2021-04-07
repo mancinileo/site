@@ -1,15 +1,47 @@
 ---
-title: "ComCorp"
+title: "Comunicação Corporativa"
 description: |
-  Aulas ComCorp
+  Turma 2021.1
 site: distill::distill_website
 
 ---
 
+
+Este é o site do curso Comunicação Corporativa, ESPM Rio, turma 2021.1.
+
+Aqui, concentraremos o material de aula e referências para o curso. 
+
+Este espaço não substitui o [Canvas](http://canvas.espm.br). Qualquer dúvida, 
+entrem em contato por ele ou através do [e-mail do professor](mailto:lmancini@espm.br).
+
+---
+
+
 # Aulas
 
-Aula 1
+[**Aula 1** - Introdução](http://mancini.jor.br/comcorp/Aula-1---Introducao.html)<br>
 
-Aula 2
+[**Aula 2**- Contexto](http://mancini.jor.br/comcorp/Aula-2---Contexto.html)<br>
 
-Aula 3
+[**Aula 3**- Reputação](http://mancini.jor.br/comcorp/Aula-3---reputacao.html)<br>
+
+[**Aula 4**- Marcas](http://mancini.jor.br/comcorp/Aula-4---Marcas.html)<br>
+
+[**Aula 5**- Estratégia](http://mancini.jor.br/comcorp/Aula-5---Estrategia.html)<br>
+
+[**Aula 6**- Comunicação Integrada](http://mancini.jor.br/comcorp/Aula-6---ComIntegrada.html)<br>
+
+[**Aula 7**- Governança Corporativa](http://mancini.jor.br/comcorp/Aula-7---Governanca.html)<br>
+
+[**Aula 8**- Stakeholders](http://mancini.jor.br/comcorp/Aula-8---Stakeholders.html)<br>
+
+[**Aula 9**- Marcas e sentido](http://mancini.jor.br/comcorp/Aula-9---Marcas-e-sentido.html)<br>
+
+[**Aula 10** - Cultura Organizacional](http://mancini.jor.br/comcorp/Aula-10---CulturaOrga.html)<br>
+
+[**Aula 11** - Sustentabilidade](http://mancini.jor.br/comcorp/Aula-11---Sustentabilidade.html)<br>
+
+[**Aula 12** - Internet](http://mancini.jor.br/comcorp/Aula-12---Internet.html)<br>
+
+
+
